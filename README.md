@@ -21,3 +21,11 @@ I found that SavePageWE is the best and fastest single-page HTML condenser. Unfo
 In this fork, I wrote a new background script for Node.js but kept most of the code from the client script (the ``NodeSavePage_client.js`` source file combines the ``content.js`` and ``content-frame.js`` file from the extension. Since I couldn't find the original project by DW-dev on GitHub I am also including the original Chrome extension code.
 
 I am mostly using this code for scraping news websites and on a test sample this Node.js version seems to work about as well as the original extension (with some oddities such as sometimes not loading all images). Please contribute and make it better!
+
+
+#运行服务
+node server.js
+
+#访问url
+curl -X POST http://localhost:3000/scrape -H "Content-Type: application/json" -d '{"url":"https://www.baidu.com", "filename":"", "lazyload":false}'
+
