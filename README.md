@@ -22,6 +22,10 @@ In this fork, I wrote a new background script for Node.js but kept most of the c
 
 I am mostly using this code for scraping news websites and on a test sample this Node.js version seems to work about as well as the original extension (with some oddities such as sometimes not loading all images). Please contribute and make it better!
 
+#安装依赖
+npm install puppeteer --force
+npm install express
+npm install iconv-lite
 
 #运行服务
 node server.js
