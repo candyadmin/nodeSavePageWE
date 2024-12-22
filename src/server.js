@@ -41,14 +41,15 @@ app.post('/scrape', async (req, res) => {
     const finalFilename = filename || generateFilenameFromUrl(url);
 
     // 目标文件的保存路径
-    const savePath = path.join("/opt/savePage/nodeSavePageWE/output", finalFilename);
+    // const savePath = path.join("/opt/savePage/nodeSavePageWE/output", finalFilename);
+    const savePath = path.join("output", finalFilename);
 
     try {
         await savePageWE.scrape({ url, path: savePath, lazyload });
         res.json({ message: 'Page saved successfully', path: savePath });
     } catch (error) {
         console.error(`Error scraping page: ${error.message}`);
-        res.status(500).json({ error: 'Failed to save page' });
+        res.status(500).json({ error: 'Failed to save page'+error });
     }
 });
 
